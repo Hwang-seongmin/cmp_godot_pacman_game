@@ -1,0 +1,193 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://Game Environment/Wall.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Game Environment/Grating.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Game Environment/Drum.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Game Environment/Rock.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=5]
+[ext_resource path="res://UI/UI.gd" type="Script" id=6]
+[ext_resource path="res://Collectibles/Collectible_2.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Collectibles/Collectible_1.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Collectibles/Collectible_3.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Font/KOTRA HOPE_TTF.ttf" type="DynamicFontData" id=10]
+[ext_resource path="res://Stalker/Stalker.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Enemy/Enemy.tscn" type="PackedScene" id=12]
+
+[sub_resource type="DynamicFont" id=3]
+size = 30
+font_data = ExtResource( 10 )
+
+[sub_resource type="DynamicFont" id=1]
+size = 30
+font_data = ExtResource( 10 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 40
+font_data = ExtResource( 10 )
+
+[node name="World" type="Node2D"]
+
+[node name="Game Environment" type="Node2D" parent="."]
+
+[node name="Wall" type="Node2D" parent="Game Environment"]
+
+[node name="Wall" parent="Game Environment/Wall" instance=ExtResource( 1 )]
+position = Vector2( 506, 7 )
+scale = Vector2( 11, 1 )
+
+[node name="Wall2" parent="Game Environment/Wall" instance=ExtResource( 1 )]
+position = Vector2( 506, 594 )
+scale = Vector2( 11, 1 )
+
+[node name="Wall3" parent="Game Environment/Wall" instance=ExtResource( 1 )]
+position = Vector2( 6, 296 )
+rotation = 1.5708
+scale = Vector2( 7, 1 )
+
+[node name="Wall4" parent="Game Environment/Wall" instance=ExtResource( 1 )]
+position = Vector2( 1016, 298 )
+rotation = 1.5708
+scale = Vector2( 7, 1 )
+
+[node name="Grating" type="Node2D" parent="Game Environment"]
+position = Vector2( 1, 0 )
+
+[node name="Grating" parent="Game Environment/Grating" instance=ExtResource( 2 )]
+position = Vector2( 112, 90 )
+
+[node name="Grating2" parent="Game Environment/Grating" instance=ExtResource( 2 )]
+position = Vector2( 896, 87 )
+
+[node name="Grating3" parent="Game Environment/Grating" instance=ExtResource( 2 )]
+position = Vector2( 325, 213 )
+
+[node name="Grating4" parent="Game Environment/Grating" instance=ExtResource( 2 )]
+position = Vector2( 325, 324 )
+
+[node name="Grating5" parent="Game Environment/Grating" instance=ExtResource( 2 )]
+position = Vector2( 901, 506 )
+
+[node name="Drum" type="Node2D" parent="Game Environment"]
+
+[node name="Drum" parent="Game Environment/Drum" instance=ExtResource( 3 )]
+position = Vector2( 716, 202 )
+
+[node name="Drum2" parent="Game Environment/Drum" instance=ExtResource( 3 )]
+position = Vector2( 718, 400 )
+
+[node name="Rock" type="Node2D" parent="Game Environment"]
+
+[node name="Rock" parent="Game Environment/Rock" instance=ExtResource( 4 )]
+position = Vector2( 281, 111 )
+
+[node name="Rock2" parent="Game Environment/Rock" instance=ExtResource( 4 )]
+position = Vector2( 184, 508 )
+
+[node name="Rock3" parent="Game Environment/Rock" instance=ExtResource( 4 )]
+position = Vector2( 184, 440 )
+
+[node name="Rock4" parent="Game Environment/Rock" instance=ExtResource( 4 )]
+position = Vector2( 524, 303 )
+
+[node name="Rock5" parent="Game Environment/Rock" instance=ExtResource( 4 )]
+position = Vector2( 457, 437 )
+
+[node name="Player" parent="." instance=ExtResource( 5 )]
+position = Vector2( 510, 88 )
+
+[node name="UI" type="Node2D" parent="."]
+script = ExtResource( 6 )
+
+[node name="HealthLabel" type="Label" parent="UI"]
+margin_left = 23.0
+margin_top = 554.0
+margin_right = 123.0
+margin_bottom = 590.0
+custom_fonts/font = SubResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PointsLabel" type="Label" parent="UI"]
+margin_left = 23.0
+margin_top = 19.0
+margin_right = 123.0
+margin_bottom = 55.0
+custom_fonts/font = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GameOver" type="Label" parent="UI"]
+margin_left = 428.0
+margin_top = 150.0
+margin_right = 616.0
+margin_bottom = 236.0
+custom_fonts/font = SubResource( 2 )
+text = "Game Over"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Collectibles" type="Node2D" parent="."]
+
+[node name="Collectible1" parent="Collectibles" instance=ExtResource( 8 )]
+position = Vector2( 103, 199 )
+
+[node name="Collectible2" parent="Collectibles" instance=ExtResource( 8 )]
+position = Vector2( 719, 299 )
+
+[node name="Collectible3" parent="Collectibles" instance=ExtResource( 8 )]
+position = Vector2( 971, 560 )
+
+[node name="Collectible_2" parent="Collectibles" instance=ExtResource( 7 )]
+position = Vector2( 41, 43 )
+
+[node name="Collectible_3" parent="Collectibles" instance=ExtResource( 7 )]
+position = Vector2( 78, 479 )
+
+[node name="Collectible_4" parent="Collectibles" instance=ExtResource( 7 )]
+position = Vector2( 325, 269 )
+
+[node name="Collectible_5" parent="Collectibles" instance=ExtResource( 7 )]
+position = Vector2( 252, 386 )
+
+[node name="Collectible_6" parent="Collectibles" instance=ExtResource( 9 )]
+position = Vector2( 970, 47 )
+
+[node name="Collectible_7" parent="Collectibles" instance=ExtResource( 9 )]
+position = Vector2( 457, 528 )
+
+[node name="Collectible_8" parent="Collectibles" instance=ExtResource( 9 )]
+position = Vector2( 893, 429 )
+
+[node name="Enemy" type="Node2D" parent="."]
+
+[node name="Enemy" parent="Enemy" instance=ExtResource( 12 )]
+position = Vector2( 223, 272 )
+
+[node name="Enemy2" parent="Enemy" instance=ExtResource( 12 )]
+position = Vector2( 619, 301 )
+
+[node name="Stalker" parent="." instance=ExtResource( 11 )]
+position = Vector2( 322, 478 )
+
+[node name="Stalker2" parent="." instance=ExtResource( 11 )]
+position = Vector2( 814, 86 )
+
+[connection signal="collected" from="Collectibles/Collectible1" to="UI" method="_on_Collectible1_collected"]
+[connection signal="collected" from="Collectibles/Collectible2" to="UI" method="_on_Collectible1_collected"]
+[connection signal="collected" from="Collectibles/Collectible3" to="UI" method="_on_Collectible1_collected"]
+[connection signal="collected" from="Collectibles/Collectible_2" to="UI" method="_on_Collectible_2_collected"]
+[connection signal="collected" from="Collectibles/Collectible_3" to="UI" method="_on_Collectible_2_collected"]
+[connection signal="collected" from="Collectibles/Collectible_4" to="UI" method="_on_Collectible_2_collected"]
+[connection signal="collected" from="Collectibles/Collectible_5" to="UI" method="_on_Collectible_2_collected"]
+[connection signal="collected" from="Collectibles/Collectible_6" to="UI" method="_on_Collectible_6_collected"]
+[connection signal="collected" from="Collectibles/Collectible_7" to="UI" method="_on_Collectible_6_collected"]
+[connection signal="collected" from="Collectibles/Collectible_8" to="UI" method="_on_Collectible_6_collected"]
+[connection signal="lose_health" from="Enemy/Enemy" to="UI" method="_on_Enemy_lose_health"]
+[connection signal="lose_health" from="Enemy/Enemy2" to="UI" method="_on_Enemy_lose_health"]
+[connection signal="lose_health" from="Stalker" to="UI" method="_on_Stalker_lose_health"]
+[connection signal="lose_health" from="Stalker2" to="UI" method="_on_Stalker_lose_health"]
