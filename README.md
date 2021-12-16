@@ -1,2 +1,5 @@
-# cmp_godot_pacman_game
+# CMP Godot Engine
 - Like pacman game
+
+## Credits
+- 201721063 Seong-min Hwang
